@@ -89,7 +89,7 @@ async function main() {
   // await setTimeout(3000)
 
   s.stop("")
-  outro("Commit success !")
+  outro("Commit success !!!!")
 }
 
 main()
