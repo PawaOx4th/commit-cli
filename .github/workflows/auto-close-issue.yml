@@ -16,6 +16,6 @@ jobs:
       if: github.event.pull_request.merged == false && github.event.pull_request.closed_at != null
       uses: peter-evans/close-issue@v1.0.0
       with:
-        issue-number: ${{ github.event.pull_request.title | replace("(#| )", "") }}
+        issue-number: ${{ join(split(github.event.pull_request.title, ' '), '') }}
         comment: 'This issue has been closed because the corresponding pull request has been closed.'
         repo-token: ${{ secrets.GITHUB_TOKEN }}
