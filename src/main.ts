@@ -1,16 +1,4 @@
-// Run `npm start` to start the demo
-import {
-  intro,
-  outro,
-  confirm,
-  select,
-  spinner,
-  isCancel,
-  cancel,
-  text,
-  note,
-} from "@clack/prompts"
-import { setTimeout } from "node:timers/promises"
+import { intro, note, outro, select, spinner, text } from "@clack/prompts"
 import { exec, spawnSync } from "node:child_process"
 
 async function main() {
