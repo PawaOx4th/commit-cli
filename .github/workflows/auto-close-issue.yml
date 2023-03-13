@@ -1,27 +1,21 @@
-name: Close issues related to a merged pull request based on master branch.
+name: Close Issue on Pull Request Close
 
 on:
   pull_request:
     types: [closed]
-    branches:
-      - main
-      - develop
 
 jobs:
-  close-issues:
+  close-issue:
     runs-on: ubuntu-latest
-    permissions:
-      issues: write
-      pull-requests: write
+
     steps:
-      - uses: actions/stale@v5
-        with:
-          days-before-issue-stale: -1
-          days-before-issue-close: -1
-          stale-issue-label: "stale"
-          stale-issue-message: "This issue is stale because it has been open for 30 days with no activity."
-          close-issue-message: "This issue was closed because it has been inactive for 14 days since being marked as stale."
-          days-before-pr-stale: -1
-          days-before-pr-close: -1
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-# Customize the parameters in your workflow file:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Close Issue
+      if: github.event.pull_request.merged == false && github.event.pull_request.closed_at != null
+      uses: peter-evans/close-issue@v1.0.0
+      with:
+        issue-number: ${{ github.event.pull_request.title | replace("(#| )", "") }}
+        comment: 'This issue has been closed because the corresponding pull request has been closed.'
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
