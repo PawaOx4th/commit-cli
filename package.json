@@ -14,6 +14,9 @@
     "type": "git",
     "url": "git+git@github.com:PawaOx4th/commit-cli.git"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
