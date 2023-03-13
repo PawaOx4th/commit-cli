@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { intro, note, outro, select, spinner, text } from "@clack/prompts"
 import { exec, spawnSync } from "node:child_process"
 async function main() {
