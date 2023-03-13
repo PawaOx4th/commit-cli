@@ -8,12 +8,20 @@ on:
       - develop
 
 jobs:
-  closeIssueOnPrMergeTrigger:
-
+  close-issues:
     runs-on: ubuntu-latest
-
+    permissions:
+      issues: write
+      pull-requests: write
     steps:
-      - name: Closes issues related to a merged pull request.
-        uses: ldez/gha-mjolnir@v1.0.3
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/stale@v5
+        with:
+          days-before-issue-stale: -1
+          days-before-issue-close: -1
+          stale-issue-label: "stale"
+          stale-issue-message: "This issue is stale because it has been open for 30 days with no activity."
+          close-issue-message: "This issue was closed because it has been inactive for 14 days since being marked as stale."
+          days-before-pr-stale: -1
+          days-before-pr-close: -1
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+# Customize the parameters in your workflow file:
