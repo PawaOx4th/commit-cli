@@ -10,6 +10,10 @@
     "dev": "ts-node-esm src/main.ts",
     "start": "node ./dist/main.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+git@github.com:PawaOx4th/commit-cli.git"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
