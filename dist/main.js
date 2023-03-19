@@ -85,7 +85,7 @@ async function main() {
     });
 }
 main().catch(() => {
-    p.cancel("Cancel commit ");
+    p.cancel("Cancel commit .");
     process.exit(0);
 });
 //# sourceMappingURL=main.js.map

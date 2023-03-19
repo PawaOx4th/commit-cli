@@ -1,6 +1,5 @@
 import * as p from "@clack/prompts"
 import { exec, spawnSync } from "node:child_process"
-import color from "picocolors"
 
 const typeForCommit = [
   {
@@ -92,6 +91,6 @@ async function main() {
 }
 
 main().catch(() => {
-  p.cancel("Cancel commit ")
+  p.cancel("Cancel commit .")
   process.exit(0)
 })
