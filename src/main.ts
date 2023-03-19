@@ -1,5 +1,19 @@
-import { intro, note, outro, select, spinner, text } from "@clack/prompts"
+import {
+  intro,
+  note,
+  outro,
+  select,
+  spinner,
+  text,
+  cancel,
+  isCancel,
+} from "@clack/prompts"
 import { exec, spawnSync } from "node:child_process"
+
+function onCancel() {
+  cancel("Bye bye !")
+  process.exit(0)
+}
 
 async function main() {
   console.clear()
@@ -75,6 +89,8 @@ async function main() {
   await exec(`git commit -m "${dataCommit}"`)
 
   // await setTimeout(3000)
+
+  isCancel("") && onCancel()
 
   s.stop("")
   outro("Commit success !!!!")
