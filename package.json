@@ -1,6 +1,6 @@
 {
   "name": "@pawaox4th/commit-cli",
-  "version": "0.0.7-beta",
+  "version": "0.0.9-beta",
   "description": "",
   "main": "./dist/main.js",
   "type": "module",
@@ -18,7 +18,7 @@
     "registry": "https://registry.npmjs.org/"
   },
   "bin": {
-    "p-commit": "./dist/main.js",
+    "commit": "./dist/main.js",
     "pc": "./dist/main.js"
   },
   "keywords": [],
