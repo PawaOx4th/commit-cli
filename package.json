@@ -35,6 +35,7 @@
   "dependencies": {
     "@clack/core": "^0.3.2",
     "@clack/prompts": "^0.6.3",
+    "@pawaox4th/commit-cli": "0.0.7-beta",
     "picocolors": "^1.0.0",
     "prompt-sync": "^4.2.0"
   }

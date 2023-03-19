@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@clack/core': ^0.3.2
   '@clack/prompts': ^0.6.3
+  '@pawaox4th/commit-cli': 0.0.7-beta
   '@types/node': ^18.15.0
   '@types/prompt-sync': ^4.2.0
   picocolors: ^1.0.0
@@ -15,6 +16,7 @@ specifiers:
 dependencies:
   '@clack/core': 0.3.2
   '@clack/prompts': 0.6.3
+  '@pawaox4th/commit-cli': 0.0.7-beta
   picocolors: 1.0.0
   prompt-sync: 4.2.0
 
@@ -67,6 +69,16 @@ packages:
       '@jridgewell/resolve-uri': 3.1.0
       '@jridgewell/sourcemap-codec': 1.4.14
     dev: true
+
+  /@pawaox4th/commit-cli/0.0.7-beta:
+    resolution: {integrity: sha512-H6MHlutAImYdkmox0UNizyqKEQKKD5L2REvFIQ8Dl53LYwgJi/9s4OFxf/R+LKL02C3/KIXKqJ9EESlwQPbsdA==}
+    hasBin: true
+    dependencies:
+      '@clack/core': 0.3.2
+      '@clack/prompts': 0.6.3
+      picocolors: 1.0.0
+      prompt-sync: 4.2.0
+    dev: false
 
   /@tsconfig/node10/1.0.9:
     resolution: {integrity: sha512-jNsYVVxU8v5g43Erja32laIDHXeoNvFEpX33OK4d6hljo3jDhCBDhx5dhCCTMWUojscpAagGiRkBKxpdl9fxqA==}
