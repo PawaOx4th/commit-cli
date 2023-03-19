@@ -1,6 +1,6 @@
 {
   "name": "@pawaox4th/commit-cli",
-  "version": "0.0.3",
+  "version": "0.0.4-beta",
   "description": "",
   "main": "./dist/main.js",
   "type": "module",
