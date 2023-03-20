@@ -1,7 +1,12 @@
 import * as p from "@clack/prompts"
 import { exec, spawnSync, execSync } from "node:child_process"
+import chalk from "chalk"
 
 const typeForCommit = [
+  {
+    label: "refactor🔨:",
+    value: "refactor🔨:",
+  },
   {
     value: "chore🤖:",
     label: "chore🤖:",
@@ -25,10 +30,6 @@ const typeForCommit = [
   {
     label: "perf🚀:",
     value: "perf🚀:",
-  },
-  {
-    label: "refactor🔨:",
-    value: "refactor🔨:",
   },
   {
     label: "revert🔀:",
@@ -57,7 +58,7 @@ async function main() {
 
   exec("clear")
 
-  p.intro(`Welcome to the commit-cli !!!.`)
+  p.intro(chalk.blue.bgBlack(`${"Welcome to the commit-cli !!!."}`))
 
   const commitWorkFlows = await p.group({
     async checkFileChange() {
@@ -69,16 +70,19 @@ async function main() {
         return
       } catch (error) {
         // console.log("🔥 ERROR :", error)
-        p.outro("Please commit your file change before commit.")
+
+        p.outro(`${chalk.yellowBright("File change not commit.")}`)
         process.exit(0)
       }
       // process.exit(0)
     },
     selectType() {
-      return p.select({
+      const response = p.select({
         message: "Commit type.",
         options: [...typeForCommit],
       })
+
+      return response
     },
     commitMsg: () =>
       p.text({

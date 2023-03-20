@@ -6,6 +6,7 @@ specifiers:
   '@pawaox4th/commit-cli': 0.0.7-beta
   '@types/node': ^18.15.0
   '@types/prompt-sync': ^4.2.0
+  chalk: ^5.2.0
   picocolors: ^1.0.0
   prompt-sync: ^4.2.0
   ts-node: ^10.9.1
@@ -17,6 +18,7 @@ dependencies:
   '@clack/core': 0.3.2
   '@clack/prompts': 0.6.3
   '@pawaox4th/commit-cli': 0.0.7-beta
+  chalk: 5.2.0
   picocolors: 1.0.0
   prompt-sync: 4.2.0
 
@@ -166,6 +168,11 @@ packages:
   /buffer-from/1.1.2:
     resolution: {integrity: sha512-E+XQCRwSbaaiChtv6k6Dwgc+bx+Bs6vuKJHHl5kox/BaKbhiXzqQOwK4cO22yElGp2OCmjwVhT3HmxgyPGnJfQ==}
     dev: true
+
+  /chalk/5.2.0:
+    resolution: {integrity: sha512-ree3Gqw/nazQAPuJJEy+avdl7QfZMcUvmHIKgEZkGL+xOBzRvup5Hxo6LHuMceSxOabuJLJm5Yp/92R9eMmMvA==}
+    engines: {node: ^12.17.0 || ^14.13 || >=16.0.0}
+    dev: false
 
   /chokidar/3.5.3:
     resolution: {integrity: sha512-Dr3sfKRP6oTcjf2JmUmFJfeVMvXBdegxB0iVQ5eb2V10uFJUCAS8OByZdVAyVb8xXNz3GjjTgj9kLWsZTqE6kw==}
