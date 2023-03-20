@@ -18,8 +18,8 @@
     "registry": "https://registry.npmjs.org/"
   },
   "bin": {
-    "commit": "./dist/main.js",
-    "pc": "./dist/main.js"
+    "commit": "./dist/index.js",
+    "pc": "./dist/index.js"
   },
   "keywords": [],
   "author": "",
