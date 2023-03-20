@@ -1,5 +1,5 @@
 import * as p from "@clack/prompts"
-import { exec, spawnSync } from "node:child_process"
+import { exec, spawnSync, execSync } from "node:child_process"
 
 const typeForCommit = [
   {
@@ -55,9 +55,22 @@ const typeForCommit = [
 async function main() {
   console.clear()
 
+  exec("clear")
+
   p.intro(`Welcome to the commit-cli !!!.`)
 
   const commitWorkFlows = await p.group({
+    async checkFileChange() {
+      try {
+        const res = await execSync("git diff HEAD --staged --quiet --exit-code")
+        // console.log("🔥 RES :", res.toJSON())
+      } catch (error) {
+        // console.log("🔥 ERROR :", error)
+        p.outro("Please commit your file change before commit.")
+        process.exit(0)
+      }
+      // process.exit(0)
+    },
     selectType() {
       return p.select({
         message: "Commit type.",
