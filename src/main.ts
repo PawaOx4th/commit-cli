@@ -62,11 +62,11 @@ async function main() {
   const commitWorkFlows = await p.group({
     async checkFileChange() {
       try {
-        const res = execSync("git diff --staged --quiet --exit-code")
-          .toString()
-          .trim()
+        const res = execSync("git status -s").toString().trim()
 
-        console.log("🔥 RES :", res)
+        if (!res && res.length === 0) throw new Error("File change not commit.")
+
+        return
       } catch (error) {
         // console.log("🔥 ERROR :", error)
         p.outro("Please commit your file change before commit.")
