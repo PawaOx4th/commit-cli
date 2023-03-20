@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import * as p from "@clack/prompts"
 import { exec, spawnSync, execSync } from "node:child_process"
 import chalk from "chalk"

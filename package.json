@@ -1,12 +1,12 @@
 {
   "name": "@pawaox4th/commit-cli",
-  "version": "0.0.13-beta",
+  "version": "0.0.14-beta",
   "description": "",
-  "main": "./dist/main.js",
+  "main": "./dist/main.mjs",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
+    "build": "unbuild",
     "dev": "ts-node-esm src/main.ts",
     "start": "node ./dist/main.js"
   },
@@ -18,9 +18,9 @@
     "registry": "https://registry.npmjs.org/"
   },
   "bin": {
-    "k-commit": "./dist/main.js",
-    "pc": "./dist/main.js",
-    "kc": "./dist/main.js"
+    "k-commit": "./dist/main.mjs",
+    "pc": "./dist/main.mjs",
+    "kc": "./dist/main.mjs"
   },
   "keywords": [],
   "author": "",
@@ -39,6 +39,7 @@
     "@pawaox4th/commit-cli": "0.0.7-beta",
     "chalk": "^5.2.0",
     "picocolors": "^1.0.0",
-    "prompt-sync": "^4.2.0"
+    "prompt-sync": "^4.2.0",
+    "unbuild": "^1.1.2"
   }
 }
