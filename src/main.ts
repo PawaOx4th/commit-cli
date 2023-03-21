@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import * as p from "@clack/prompts"
-import { exec, spawnSync, execSync } from "node:child_process"
+import { exec, spawnSync, execSync, spawn } from "node:child_process"
 import chalk from "chalk"
 
 const typeForCommit = [
@@ -102,7 +102,10 @@ async function main() {
       const dataCommit = `${data.results.selectType} ${data.results.commitMsg}`
       await spawnSync("git", ["add", "."])
 
-      await exec(`git commit -m "${dataCommit}"`)
+      spawn(`git commit -m "${dataCommit}"`, {
+        shell: true,
+        stdio: [0, 1, 2],
+      })
       s.stop()
     },
     success: () => {
